@@ -1,0 +1,19 @@
+.articleBox .createTime {
+  font-size: 13px;
+  color: #999;
+  margin: 0 0 30px;
+  letter-spacing: 1px;
+}
+.articleBox .title {
+  font-size: 32px;
+  margin: 0 0 45px;
+  letter-spacing: 1px;
+}
+.articleBox .imageBox {
+  overflow: hidden;
+  margin: 40px 0;
+}
+.articleBox .imageBox img {
+  float: left;
+  width: 100%;
+}

@@ -1,0 +1,32 @@
+.articleListBox .article {
+  padding: 40px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.articleListBox .article .createTime {
+  font-size: 13px;
+  color: #999;
+  margin-right: 30px;
+}
+.articleListBox .article .titleBox {
+  display: inline-block;
+  width: 550px;
+}
+.articleListBox .article .titleBox .title {
+  color: #444;
+  font-size: 20px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  width: 550px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.articleListBox .article .titleBox .title:hover {
+  color: #f33;
+}
+.articleListBox .paginationBox {
+  margin-top: 40px;
+  text-align: end;
+}
