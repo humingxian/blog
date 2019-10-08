@@ -21,4 +21,6 @@
 
 项目打包
 
+https://www.travis-ci.org/humingxian/front.svg?branch=master
+
 
