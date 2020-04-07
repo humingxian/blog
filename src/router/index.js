@@ -30,7 +30,12 @@ const Todo = Loadable({
 
 const TestUseState = Loadable({
   loading: Loading,
-  loader: () => import('../page/testUseState')
+  loader: () => import('../page/test/testUseState')
+})
+
+const TestUseEffect = Loadable({
+  loading: Loading,
+  loader: () => import('../page/test/testUseEffect')
 })
 
 const Error = () => {
@@ -76,6 +81,10 @@ const aRouter = [{
   path: '/testUseState',
   name: 'testUseState',
   component: TestUseState
+}, {
+  path: '/testUseEffect',
+  name: 'testUseEffect',
+  component: TestUseEffect
 }, {
   path: '/error',
   name: 'error',
