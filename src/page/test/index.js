@@ -1,52 +1,39 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { toggleTodo, addTodo } from '../../store/actions/todo'
+import PropTypes from 'prop-types'
+import { toggleTodo, addTodo } from '../../store/actions/index'
 import { Input, Button } from 'antd'
 
-import PropTypes from 'prop-types'
-
 // server
-import { getList } from '../../api/order'
-
-class Home extends Component {
+// import { getList, orderList } from 'api/order/order'
+class Test extends Component {
   constructor (props) {
     super(props)
     this.state = {
       iptVal: ''
     }
-    this.addTodo = this.addTodo.bind(this)
-    this.onChange = this.onChange.bind(this)
   }
 
-  addTodo () {
+  addTodo = () => {
     this.state.iptVal && this.props.addTodo(this.state.iptVal)
     this.setState({
       iptVal: ''
     })
   }
 
-  onChange (e) {
+  onChange = (e) => {
     this.setState({
       iptVal: e.target.value
     })
   }
 
-  componentDidMount () {
-    getList({
-      userCode: 1000041,
-      pageNum: 1,
-      orderSource: 'pc_jc',
-      orderState: ''
-    }).then(res => {
-      console.log(res.data)
-    })
-  }
+  componentDidMount () {}
 
   render () {
     const { todos } = this.props
     return (
       <div>
-        <h1>Home</h1>
+        <h1>TEST</h1>
         <div>
           <Input type='text' value={this.state.iptVal} onChange={this.onChange} style={{ width: '300px' }}/>
           <Button type='primary' onClick={this.addTodo}>新增</Button>
@@ -55,7 +42,9 @@ class Home extends Component {
           {
             todos.map((item, index) => {
               return <li
-                key={index} onClick={e => this.props.toggleTodo(item.id)} style={item.completed ? { textDecoration: 'line-through' } : {}}
+                key={ index }
+                onClick={e => this.props.toggleTodo(item.id)}
+                style={item.completed ? { textDecoration: 'line-through' } : {}}
               >{item.text}</li>
             })
           }
@@ -63,12 +52,6 @@ class Home extends Component {
       </div>
     )
   }
-}
-
-Home.propTypes = {
-  addTodo: PropTypes.func,
-  toggleTodo: PropTypes.func,
-  todos: PropTypes.array
 }
 
 // 将store里的state映射到组件中的props里
@@ -82,6 +65,13 @@ const mapDispatchToProps = dispatch => ({
   addTodo: text => dispatch(addTodo(text))
 })
 
+Test.propTypes = {
+  history: PropTypes.object,
+  addTodo: PropTypes.func,
+  todos: PropTypes.array,
+  toggleTodo: PropTypes.func
+}
+
 export default connect(
   mapStateToProps, mapDispatchToProps
-)(Home)
+)(Test)

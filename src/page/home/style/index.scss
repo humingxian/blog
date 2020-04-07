@@ -1,34 +1,38 @@
-.articleListBox{
-  .article{
+.articleListBox {
+  .article {
     padding: 40px 20px;
     border-bottom: 1px solid #ccc;
-    .createTime{
+
+    .createTime {
       font-size: 13px;
       color: #999;
       margin-right: 30px;
     }
-    .titleBox{
+
+    .titleBox {
       display: inline-block;
       width: 550px;
-      .title{
+
+      .title {
         color: #444;
         font-size: 20px;
         letter-spacing: 3px;
         cursor: pointer;
         width: 550px;
-        overflow : hidden;
+        overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
       }
-      .title:hover{
-        color: #f33;
+
+      .title:hover {
+        color: #1da57a;
       }
     }
-    
   }
-  .paginationBox{
+
+  .paginationBox {
     margin-top: 40px;
     text-align: end;
   }

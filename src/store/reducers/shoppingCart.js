@@ -4,7 +4,7 @@ import {
 
 import { storage } from '../../utils/storage/storage'
 
-const initState = window.localStorage.getItem('store') ? JSON.parse(window.localStorage.getItem('store'))['shoppingCart'] || [] : []
+const initState = window.localStorage.getItem('store') ? JSON.parse(window.localStorage.getItem('store')).shoppingCart || [] : []
 
 // 初始化数据存入localStorage
 storage('shoppingCart', initState)

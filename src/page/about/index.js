@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addGoods } from '../../store/actions/shoppingCart'
+import PropTypes from 'prop-types'
 
-// import { Input, Button } from 'antd'
+import { Input, Button } from 'antd'
 
 class About extends Component {
   constructor (props) {
@@ -10,16 +11,18 @@ class About extends Component {
     this.state = {
       iptVal: ''
     }
+    this.addGoods = this.addGoods.bind(this)
+    this.onChange = this.onChange.bind(this)
   }
 
-  addGoods = () => {
-    this.state.iptVal && this.props.addGoods(this.state.iptVal)
+  addGoods () {
+    this.state.iptVal && this.props.addGoodsForProps(this.state.iptVal)
     this.setState({
       iptVal: ''
     })
   }
 
-  onChange = (e) => {
+  onChange (e) {
     this.setState({
       iptVal: e.target.value
     })
@@ -53,8 +56,13 @@ const mapStateToProps = state => ({
 
 // 将store里的方法映射到组件中的props里
 const mapDispatchToProps = dispatch => ({
-  addGoods: name => dispatch(addGoods(name))
+  addGoodsForProps: name => dispatch(addGoods(name))
 })
+
+About.propTypes = {
+  shoppingCart: PropTypes.array,
+  addGoodsForProps: PropTypes.func
+}
 
 export default connect(
   mapStateToProps, mapDispatchToProps

@@ -28,10 +28,30 @@ const Todo = Loadable({
   loader: () => import('../page/todo')
 })
 
+const TestUseState = Loadable({
+  loading: Loading,
+  loader: () => import('../page/testUseState')
+})
+
+const Error = () => {
+  return <div>404</div>
+}
+Error.displayName = 'Hello'
+
+const RedirectHome = () => {
+  return <Redirect to='/home'/>
+}
+RedirectHome.displayName = 'RedirectHome'
+
+const RedirectError = () => {
+  return <Redirect to='/error'/>
+}
+RedirectError.displayName = 'RedirectError'
+
 const aRouter = [{
   path: '/',
   exact: true,
-  render: () => <Redirect to="/home"/>
+  component: RedirectHome
 }, {
   path: '/home',
   name: 'home',
@@ -53,20 +73,27 @@ const aRouter = [{
   name: 'todo',
   component: Todo
 }, {
+  path: '/testUseState',
+  name: 'testUseState',
+  component: TestUseState
+}, {
   path: '/error',
   name: 'error',
-  component: () => <div>404</div>
+  component: Error
 }, {
   path: '/*',
-  render: () => <Redirect to="/error"/>
+  component: RedirectError
 }]
 
-export default () => (<HashRouter>
-  <Switch>
-    {
-      aRouter.map((props, index) => {
-        return <Route {...props} key={index} />
-      })
-    }
-  </Switch>
-</HashRouter>)
+export default function Routers () {
+  return (<HashRouter>
+    <Switch>
+      {
+        aRouter.map((props, index) => {
+          return <Route {...props} key={index} />
+        })
+      }
+    </Switch>
+  </HashRouter>)
+}
+Routers.displayName = 'Routers'

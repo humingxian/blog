@@ -3,9 +3,9 @@ const proxy = require('http-proxy-middleware')
 // 针对create-react-app实现接口服务代理功能
 module.exports = function (app) {
   app.use(
-    proxy('/omall/', {
-      target: 'http://sltest.juboon.com:9500/',
-      pathRewrite: { '^/omall/': '/bonade-omall-web/omall/' }
+    proxy('/api/', {
+      target: 'http://localhost:3003/',
+      pathRewrite: { '^/api/': '/api/' }
     })
   )
 }

@@ -1,21 +1,22 @@
 .headerAndFooter {
   font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
   font-weight: 400;
-  min-height: 900px;
+  min-height: 100%;
 }
+
 .headerAndFooter .top,
 .headerAndFooter .bottom {
   text-align: center;
-  color: #000;
   padding: 20px 0;
   font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
   font-weight: 400;
 }
+
 .headerAndFooter .content {
   width: 50%;
   margin: 0 auto;
 }
+
 .headerAndFooter .bottom {
   margin: 50px 0 20px;
-  color: #333;
 }

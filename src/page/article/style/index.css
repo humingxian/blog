@@ -1,18 +1,28 @@
+.box {
+  background-image: url(../../../asserts/images/1.jpg);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
 .articleBox .createTime {
   font-size: 13px;
-  color: #999;
+  color: #fff;
   margin: 0 0 30px;
   letter-spacing: 1px;
 }
+
 .articleBox .title {
   font-size: 32px;
   margin: 0 0 45px;
   letter-spacing: 1px;
 }
+
 .articleBox .imageBox {
   overflow: hidden;
   margin: 40px 0;
 }
+
 .articleBox .imageBox img {
   float: left;
   width: 100%;
